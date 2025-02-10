@@ -37,7 +37,14 @@
                 <img src="bermuda-masculina-1.jpg" alt="Bermuda Masculina Jeans">
                 <h3>Bermuda Masculina Jeans</h3>
                 <p class="preco">R$ 120,00</p>
-                <a href="#" class="btn-comprar">Comprar</a>
+                <label for="tamanho1">Escolha o tamanho:</label>
+                <select id="tamanho1" class="tamanho">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <a href="#" class="btn-comprar" onclick="comprar('Bermuda Masculina Jeans', 'tamanho1')">Comprar</a>
             </div>
 
             <!-- Produto 2 -->
@@ -45,7 +52,14 @@
                 <img src="bermuda-feminina-1.jpg" alt="Bermuda Feminina Jeans">
                 <h3>Bermuda Feminina Jeans</h3>
                 <p class="preco">R$ 130,00</p>
-                <a href="#" class="btn-comprar">Comprar</a>
+                <label for="tamanho2">Escolha o tamanho:</label>
+                <select id="tamanho2" class="tamanho">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <a href="#" class="btn-comprar" onclick="comprar('Bermuda Feminina Jeans', 'tamanho2')">Comprar</a>
             </div>
 
             <!-- Adicione mais produtos aqui -->
@@ -58,7 +72,7 @@
         <div class="beneficios-grid">
             <div class="beneficio">
                 <h3>Entregamos em todo o Brasil</h3>
-                <p>Entregamos em qualquer região do Brasil.</p>
+                <p>Entregamos em todas as regiões do Brasil.</p>
             </div>
             <div class="beneficio">
                 <h3>Qualidade Premium</h3>
@@ -77,7 +91,7 @@
             <div class="logo">Erokiller</div>
             <div class="contato">
                 <p>Email: contato@erokiller.com</p>
-                <p>Telefone: (11) 99999-9999</p>
+                <p>Telefone: (32) 98423-5630</p>
             </div>
             <div class="redes-sociais">
                 <a href="https://www.instagram.com/erokiller123?igsh=MXVuZTlxOHY2bHV6dQ==" target="_blank">Instagram</a>
@@ -87,6 +101,14 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        function comprar(produto, tamanhoId) {
+            const tamanho = document.getElementById(tamanhoId).value;
+            const numeroWhatsApp = "5532984235630"; // Substitua pelo número correto
+            const mensagem = `Olá, gostaria de comprar o produto: ${produto}, tamanho: ${tamanho}.`;
+            const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, "_blank");
+        }
+    </script>
 </body>
 </html>
